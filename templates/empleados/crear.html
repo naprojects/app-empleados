@@ -1,0 +1,26 @@
+{% extends '/empleados/layout.html' %}
+
+{% block body %}
+
+<div class="col-md-4">
+  <div class="card card-body">
+    <h2>Crear empleado</h2>
+    <form action="/store" method="POST" enctype="multipart/form-data">
+        <div class="mb-3">
+          <label for="nombre" class="form-label">Nombre</label>
+          <input type="text" class="form-control" id="nombre" name="nombre">
+        </div>
+        <div class="mb-3">
+          <label for="correo" class="form-label">Correo</label>
+          <input type="text" class="form-control" id="correo" name="correo">
+        </div>
+        <div class="mb-3">
+            <label for="foto" class="form-label">Foto</label>
+            <input type="file" class="form-control" id="foto" name="foto">
+          </div>
+        <button type="submit" class="btn btn-primary">Enviar</button>
+    </form>
+  </div>
+</div>
+
+{% endblock %}

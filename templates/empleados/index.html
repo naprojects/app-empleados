@@ -1,0 +1,32 @@
+{% extends '/empleados/layout.html' %}
+{% block body %}
+
+<div class="col-md-6">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Foto</th>
+                <th>Nombre</th>
+                <th>Correo</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for empleado in empleados %}
+            <tr>
+                <td>{{empleado.0}}</td>
+                <td>{{empleado.3}}</td>
+                <td>{{empleado.1}}</td>
+                <td>{{empleado.2}}</td>
+                <td>
+                    <a href="/eliminar/{{ empleado.0 }}">Eliminar</a>
+                    <a href="/editar/{{ empleado.0 }}">Editar</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+{% endblock %}
